@@ -1,11 +1,23 @@
-import React from 'react'
+import React from "react";
 
-const App : React.FC = () => {
+function setStorage() {
+  window.localStorage.setItem('넌', '버튼이야.');
+}
+
+
+function MyButton({title}:{title:string}) {
   return(
-    <div>
-      <h1>Hellow React!</h1>
-    </div>
+    <button onClick={setStorage}>{title}</button>
   )
 }
 
-export default App
+const App: React.FC = () => {
+  return (
+    <div>
+      <h1>하이!</h1>
+      <MyButton title={'난 버튼이야.'} />
+    </div>
+  );
+};
+
+export default App;
